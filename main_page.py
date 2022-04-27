@@ -50,26 +50,27 @@ def command():
         query = takecom().lower()
 
         if "wikipedia" in query:
-            speak("searching details....Wait")
-            query.replace("wikipedia","")
-            results = wikipedia.summary(query,sentences=2)
+            speak("searching wikipedia...")
+            query.replace("wikipedia", "")
+            results = wikipedia.summary(query,sentences=3)
             print(results)
             speak(results)
         elif 'open youtube' in query or "open video online" in query:
+            speak("Here you go to Youtube\n")    
             webbrowser.open("www.youtube.com")
-            speak("opening youtube")    
         elif 'open google' in query:
+            speak("Here you go to Google\n")
             webbrowser.open("https://www.google.com")
-            speak("opening google")
             
-        elif 'open googlemap' in query:
-            webbrowser.open("https://www.googlemap.com")
-            speak("open map")
+        elif 'open map' in query:
+            speak("Here you go to Googlemap")
+            webbrowser.open("https://www.google.com/maps")
             
         elif 'music from pc' in query or "music" in query:
-            speak("ok i am playing music")
-            music_dir = '.\music'
+            speak("Here you go with music")
+            music_dir = "Virtual-Assistant-With-GUI-main/Music"
             musics = os.listdir(music_dir)
+            print(musics)
             os.startfile(os.path.join(music_dir,musics[0]))
         elif 'video from pc' in query or "video" in query:
             speak("ok i am playing videos")
@@ -91,16 +92,16 @@ def command():
                 speak('okey..')  
             elif 'not' in ans_take_from_user_how_are_you or 'sad' in ans_take_from_user_how_are_you or 'upset' in ans_take_from_user_how_are_you:
                 speak('oh sorry..')  
-        elif 'make you' in query or 'created you' in query or 'develop you' in query:
-            ans_m = " For your information Beerendra Singh Rawat Created me ! I give Lot of Thannks to Him "
+        elif 'who make you' in query or 'who is your creator' in query or 'develop you' in query:
+            ans_m = " For your information Terminator Created me ! I give Lot of Thanks to Him "
             print(ans_m)
             speak(ans_m)
         elif "who are you" in query or "about you" in query or "your details" in query:
-            about = "I am calix an A I based computer program but i can help you lot like a your close friend ! i promise you ! Simple try me to give simple command ! like playing music or video from your directory i also play video and song from web or online ! i can also entain you i so think you Understand me ! ok Lets Start "
+            about = "I am calix an A.I based computer program but i can help you lot like a your close friend ! i promise you ! Simple try me to give simple command ! like playing music or video from your directory i also play video and song from web or online ! i can also entain you i so think you Understand me ! ok Lets Start "
             print(about)
             speak(about)
-        elif "hello" in query or "hello calix" in query:
-            hel = "Hello Beerendra Sir ! How May i Help you.."
+        elif "hello" in query or "hello calix" in query or "hi calix" in query:
+            hel = "Hello Terminator's ! How May i Help you.."
             print(hel)
             speak(hel)
         elif "your name" in query or "sweat name" in query:
@@ -108,8 +109,13 @@ def command():
             print(na_me)
             speak(na_me)
         elif "you feeling" in query:
-            print("feeling Very sweet after meeting with you")
-            speak("feeling Very sweet after meeting with you") 
+            feel = "feeling Very sweet after meeting with you"
+            print(feel)
+            speak(feel)
+        elif "is love" in query:
+            feel = "It is 7th sense that destroy all other senses"
+            print(feel)
+            speak(feel)  
         elif query == 'none':
             continue 
         elif 'exit' in query or 'abort' in query or 'stop' in query or 'bye' in query or 'quit' in query :
